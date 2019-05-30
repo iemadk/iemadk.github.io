@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: default
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hotaru - تجربة المستخدم بالعربي</title>
-</head>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-<body>
-  <h1>مدونة تجربة المستخدم بالعربي</h1>
-</body>
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
 
-</html>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">اكمل القراءة</a>
+    </article>
+  {% endfor %}
+</div>
